@@ -159,6 +159,7 @@ $shindigConfig = array(
   // handler for ApiServlet
   'service_handler' => array(
     'people' => 'PersonHandler',
+    'ignorelist' => 'IgnoreListHandler',
     'payment' => 'PaymentHandler',
     'activities' => 'ActivityHandler',
     'appdata' => 'AppDataHandler',
@@ -177,6 +178,7 @@ $shindigConfig = array(
   // array or false if you do not want to add the decoded params
   'service_input_converter' => array(
     'people' => array('class' => 'InputPeopleConverter', 'targetField' => false),
+    'ignorelist' => array('class' => 'InputIgnoreListConverter', 'targetField' => false),
     'payment' => array('class' => 'InputPaymentConverter', 'targetField' => false),
     'activities' => array('class' => 'InputActivitiesConverter', 'targetField' => 'activity'),
     'appdata' => array('class' => 'InputAppDataConverter', 'targetField' => 'data'),
@@ -208,6 +210,7 @@ $shindigConfig = array(
   // RESTful API data service classes to use
   // See http://code.google.com/p/partuza/source/browse/#svn/trunk/Shindig for a MySql powered example
   'person_service' => 'PartuzaService',
+  'ignorelist_service' => 'PartuzaService',
   'payment_service' => 'PartuzaService',
   'activity_service' => 'PartuzaService',
   'app_data_service' => 'PartuzaService',

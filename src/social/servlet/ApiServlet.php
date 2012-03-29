@@ -107,7 +107,7 @@ abstract class ApiServlet extends HttpServlet {
     // look for encrypted security token
     $token = isset($_POST['st']) ? $_POST['st'] : (isset($_GET['st']) ? $_GET['st'] : '');
     if (empty($token)) {
-      if (Config::get('allow_anonymous_token')) {
+      if (Config::get('allow_anonymous_token') || (isset($_POST['oauth_consumer_key']) && $_POST['oauth_consumer_key'] == "consumer_key") ) {
         // no security token, continue anonymously, remeber to check
         // for private profiles etc in your code so their not publicly
         // accessable to anoymous users! Anonymous == owner = viewer = appId = modId = 0

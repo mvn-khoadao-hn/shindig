@@ -101,7 +101,7 @@ $shindigConfig = array(
 
   // Allow anonymous (READ) access to the profile information? (aka REST and JSON-RPC interfaces)
   // setting this to false means you have to be authenticated through OAuth to read the data
-  'allow_anonymous_token' => true,
+  'allow_anonymous_token' => false,
 
   // The encryption keys for encrypting the security token, and the expiration of it. Make sure these match the keys used in your container/site
   'token_cipher_key' => 'INSECURE_DEFAULT_KEY',

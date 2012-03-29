@@ -44,6 +44,7 @@ class DataServiceServlet extends ApiServlet {
     }
     try {
       $token = $this->getSecurityToken();
+var_dump($token);
       if ($token == null) {
         $this->sendSecurityError();
         return;
@@ -121,10 +122,8 @@ class DataServiceServlet extends ApiServlet {
     $servletRequest['params'] = array_merge($_GET, $_POST);
     $requestItem = RestRequestItem::createWithRequest($servletRequest, $token, $inputConverterMethod, $outputConverter);
     $responseItem = $this->getResponseItem($this->handleRequestItem($requestItem));
-echo $responseItem->getError();
-echo $responseItem->getErrorMessage();
+
     if ($responseItem->getError() == null) {
-//if(true){
       $response = $responseItem->getResponse();
       if (! ($response instanceof DataCollection) && ! ($response instanceof RestfulCollection) && count($response)) {
         $response = array("entry" => $response);

@@ -44,6 +44,7 @@ class DataServiceServlet extends ApiServlet {
     }
     try {
       $token = $this->getSecurityToken();
+
       if ($token == null) {
         $this->sendSecurityError();
         return;
