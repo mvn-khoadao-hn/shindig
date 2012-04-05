@@ -97,9 +97,9 @@ class BasicSecurityToken extends SecurityToken {
   }
 
   public function isAnonymous() {
-      throw new Exception("Can't get appId from an anonymous token" . $this->tokenData);
-//    return ($this->tokenData[$this->OWNER_KEY] === SecurityToken::$ANONYMOUS) && ($this->tokenData[$this->VIEWER_KEY] === SecurityToken::$ANONYMOUS);
-return false;
+return true;
+   return ($this->tokenData[$this->OWNER_KEY] === SecurityToken::$ANONYMOUS) && ($this->tokenData[$this->VIEWER_KEY] === SecurityToken::$ANONYMOUS);
+   //return false;
   }
 
   /**

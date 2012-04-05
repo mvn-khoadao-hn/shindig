@@ -97,8 +97,8 @@ class BasicSecurityToken extends SecurityToken {
   }
 
   public function isAnonymous() {
-//    return ($this->tokenData[$this->OWNER_KEY] === SecurityToken::$ANONYMOUS) && ($this->tokenData[$this->VIEWER_KEY] === SecurityToken::$ANONYMOUS);
-return false;
+   return ($this->tokenData[$this->OWNER_KEY] === SecurityToken::$ANONYMOUS) && ($this->tokenData[$this->VIEWER_KEY] === SecurityToken::$ANONYMOUS);
+   //return false;
   }
 
   /**
