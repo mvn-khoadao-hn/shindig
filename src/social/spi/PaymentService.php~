@@ -33,12 +33,12 @@ interface PaymentService {
   /**
    * Insert Payment object coins for person
    */
-  function insertPayment($user_id, $callbackUrl, $finishPageUrl, $message, $paymentItems);
+  function insertPayment($user_id, $appId, $callbackUrl, $finishPageUrl, $message, $paymentItems);
 
   /**
    * Insert Payment Person object coins for person
    */
-  function insertPersonPayment($payment_id, $app_id, $platform_user_id);
+  function insertPersonPayment($payment_id, $app_id, $platform_user_id, $coin);
   
   /**
    * Returns a Coin object for person with $id or false on not found

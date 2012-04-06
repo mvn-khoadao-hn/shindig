@@ -65,6 +65,7 @@ class PaymentHandler extends DataRequestHandler {
     {
 	$user_id = $request->getParameter("platformUserId");
 	$app_id = $request->getParameter("app_id");
+throw new IllegalArgumentException("No userId specified" . $app_id);
 	$callbackUrl = $request->getParameter("callbackUrl");
 	$finishPageUrl = $request->getParameter("finishPageUrl");
 	$message = $request->getParameter("message");
@@ -78,7 +79,7 @@ class PaymentHandler extends DataRequestHandler {
 	$platform_user_id = $request->getParameter("platform_user_id");
 	//$app_id = $request->getParameter("app_id");
 	$app_id = $request->getParameter("coin");
-return $app_id[0];
+	$app_id = $app_id[0];
 	$payment_id = $request->getParameter("payment_id");
 
         $service = $this->service;
