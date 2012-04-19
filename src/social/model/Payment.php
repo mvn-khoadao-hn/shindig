@@ -36,10 +36,10 @@ class Payment {
     $this->finishPageUrl = $finishPageUrl;
     $paymentItems = json_decode($paymentItems, true);
     $item = array();
-    foreach ($arr as &$paymentItems) {
-    	$value = new PaymentItem($paymentItems[0]["itemId"], $paymentItems[0]["itemName"], $paymentItems[0]["quantity"], $paymentItems[0]["imageUrl"], $paymentItems[0]["description"]);
-	array_push($item, $value);
-    }
+#    foreach ($paymentItems as $arr) {
+#    	$value = new PaymentItem($arr["itemId"], $arr["itemName"], $arr["quantity"], $arr["imageUrl"], $arr["description"]);
+#	array_push($item, $value);
+#   }
     $this->paymentItems = $paymentItems;
   }
 
